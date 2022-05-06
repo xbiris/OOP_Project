@@ -1,8 +1,24 @@
 #ifndef OOPPROJECT_DOMAIN_H
 #define OOPPROJECT_DOMAIN_H
 #include <iostream>
+#include <vector>
 using std::string;
+using std::vector;
 using std::to_string;
+
+enum InstrumentsEnum{
+    Guitar_ = 0,
+    Violin_ = 1,
+    DrumKit_ = 2,
+    Flute_ = 3
+};
+
+static const char *enum_str[] = {
+        "Guitar",
+        "Violin",
+        "DrumKit",
+        "Flute"
+};
 
 class Instrument {
 public:
@@ -12,7 +28,8 @@ public:
     inline float getPrice() const { return this->price; }
     inline bool getAcoustic() const { return this->acoustic; }
 
-    virtual string toString();
+    virtual void editAllInfo(vector<string> newInfo) = 0;
+    virtual string getAllInfo() = 0;
 private:
     int id;
     float price;
@@ -22,10 +39,13 @@ private:
 class Guitar : public Instrument {
 public:
     Guitar(int i, float p, bool a, int nrS, bool steelStr);
+    Guitar(const Guitar &guitar);
 
     inline int getNrStrings() const { return this->nrStrings; }
     inline bool getSteelStrings() const { return this->steelStrings; }
 
+    void editAllInfo(vector<string> newInfo) override;
+    string getAllInfo() override;
 private:
     int nrStrings;
     bool steelStrings; //true for steel strings, false for nylon strings
@@ -34,9 +54,13 @@ private:
 class Violin : public Instrument {
 public:
     Violin(int i, float p, bool a, int nrS, int s);
+    Violin(const Violin &violin);
 
     inline int getNrStrings() const { return this->nrStrings; }
-    inline bool getSize() const { return this->size; }
+    inline int getSize() const { return this->size; }
+
+    void editAllInfo(vector<string> newInfo) override;
+    string getAllInfo() override;
 
 private:
     int nrStrings;
@@ -44,19 +68,30 @@ private:
 };
 
 class DrumKit : public Instrument {
+public:
     DrumKit(int i, float p, bool a, int nrPie, bool dou);
+    DrumKit(const DrumKit &drumKit);
 
     inline int getNrPieces() const { return this->nrPiecesKit; }
     inline bool getDoubleBass() const { return this->doubleBass; }
+
+    void editAllInfo(vector<string> newInfo) override;
+    string getAllInfo() override;
+
 private:
     int nrPiecesKit;
     bool doubleBass; //true for double bass, false for single bass
 };
 
 class Flute : public Instrument {
+public:
     Flute(int i, float p, bool a, string mat);
+    Flute(const Flute &flute);
 
-    inline string getMaterial() const { return this->material; }
+    inline string getMaterial() const{ return this->material; }
+
+    void editAllInfo(vector<string> newInfo) override;
+    string getAllInfo() override;
 private:
     string material;
 };
