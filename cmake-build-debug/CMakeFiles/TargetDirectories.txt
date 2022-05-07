@@ -1,3 +1,3 @@
-/mnt/d/Facultate/OOP/OopProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/mnt/d/Facultate/OOP/OopProject/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/d/Facultate/OOP/OopProject/cmake-build-debug/CMakeFiles/OopProject.dir
+E:/Facultate/OOP/OOP_Project/cmake-build-debug/CMakeFiles/OopProject.dir
+E:/Facultate/OOP/OOP_Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/Facultate/OOP/OOP_Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir

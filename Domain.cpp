@@ -1,5 +1,7 @@
 #include "Domain.h"
 #include <utility>
+#include <fstream>
+using std::stringstream;
 
 Instrument::Instrument(int i, float p, bool a) {
     this->id = i;
