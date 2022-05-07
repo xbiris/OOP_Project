@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Repository.h"
+#include "UI.h"
 #include "Tests.h"
 
 int main() {
     Tests::TestAll();
-    InstrumentRepository repository;
-    repository.LoadData("data");
+    UI ui;
+    ui.StartGame();
 }

@@ -8,7 +8,7 @@ void Tests::TestAll() {
     TestRepoSaveLoad();
     TestRepoUndoRedo();
     TestRepoGet();
-    TestOut();
+    //TestOut();
     TestStringToInstrument();
 }
 
@@ -174,12 +174,19 @@ void Tests::TestOut() {
 }
 
 void Tests::TestStringToInstrument() {
-    auto g = new Guitar(1,1,true,1,true);
-    auto v = new Violin(2,2,false,3,1);
-    auto d = new DrumKit(3,1,false,5,true);
-    auto f = new Flute(4,2,true, "wood");
+    auto g = Guitar(1,1,true,1,true);
+    auto v = Violin(2,2,false,3,1);
+    auto d = DrumKit(3,1,false,5,true);
 
-    assert(g->getAllInfo() == InstrumentRepository::StringToInstrument(g->getAllInfo())->getAllInfo());
-    assert(v->getAllInfo() == InstrumentRepository::StringToInstrument(v->getAllInfo())->getAllInfo());
-    assert(d->getAllInfo() == InstrumentRepository::StringToInstrument(d->getAllInfo())->getAllInfo());
+    auto g1= InstrumentRepository::StringToInstrument(g.getAllInfo());
+    auto v1 = InstrumentRepository::StringToInstrument(v.getAllInfo());
+    auto d1 = InstrumentRepository::StringToInstrument(d.getAllInfo());
+
+    assert(g.getAllInfo() == g1->getAllInfo());
+    assert(v.getAllInfo() == v1->getAllInfo());
+    assert(d.getAllInfo() == d1->getAllInfo());
+
+    delete g1;
+    delete v1;
+    delete d1;
 }

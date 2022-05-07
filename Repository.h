@@ -16,6 +16,7 @@ public:
     void EditInstrument(unsigned int index, vector<string> newValues);
     void LoadData(const string& fileName);
     void SaveData(const string& fileName);
+    static vector<string> StringToVector(const string &line, InstrumentsEnum &instrumentsEnum);
     static Instrument* StringToInstrument(const string &line);
     void Undo();
     void Redo();
