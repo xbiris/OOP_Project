@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/d/Facultate/OOP/OopProject/Domain.h
+iostream
+-
+vector
+-
+
+/mnt/d/Facultate/OOP/OopProject/Repository.cpp
+filesystem
+-
+fstream
+-
+utility
+-
+Repository.h
+/mnt/d/Facultate/OOP/OopProject/Repository.h
+
+/mnt/d/Facultate/OOP/OopProject/Repository.h
+Domain.h
+/mnt/d/Facultate/OOP/OopProject/Domain.h
+vector
+-
+stack
+-
+
+/mnt/d/Facultate/OOP/OopProject/main.cpp
+iostream
+-
+Repository.h
+/mnt/d/Facultate/OOP/OopProject/Repository.h
+
