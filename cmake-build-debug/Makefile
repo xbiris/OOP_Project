@@ -177,6 +177,33 @@ Repository.cpp.s:
 	$(MAKE) -f CMakeFiles/OopProject.dir/build.make CMakeFiles/OopProject.dir/Repository.cpp.s
 .PHONY : Repository.cpp.s
 
+Tests.o: Tests.cpp.o
+
+.PHONY : Tests.o
+
+# target to build an object file
+Tests.cpp.o:
+	$(MAKE) -f CMakeFiles/OopProject.dir/build.make CMakeFiles/OopProject.dir/Tests.cpp.o
+.PHONY : Tests.cpp.o
+
+Tests.i: Tests.cpp.i
+
+.PHONY : Tests.i
+
+# target to preprocess a source file
+Tests.cpp.i:
+	$(MAKE) -f CMakeFiles/OopProject.dir/build.make CMakeFiles/OopProject.dir/Tests.cpp.i
+.PHONY : Tests.cpp.i
+
+Tests.s: Tests.cpp.s
+
+.PHONY : Tests.s
+
+# target to generate assembly for a file
+Tests.cpp.s:
+	$(MAKE) -f CMakeFiles/OopProject.dir/build.make CMakeFiles/OopProject.dir/Tests.cpp.s
+.PHONY : Tests.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -219,6 +246,9 @@ help:
 	@echo "... Repository.o"
 	@echo "... Repository.i"
 	@echo "... Repository.s"
+	@echo "... Tests.o"
+	@echo "... Tests.i"
+	@echo "... Tests.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

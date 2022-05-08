@@ -4,6 +4,5 @@
 
 int main() {
     Tests::TestAll();
-    UI ui;
-    ui.StartGame();
+    auto ui = UI();
 }

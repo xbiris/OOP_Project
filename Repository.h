@@ -10,7 +10,7 @@ using std::ostream;
 class InstrumentRepository {
 public:
     InstrumentRepository();
-    ~InstrumentRepository();
+    //~InstrumentRepository();
     void AddInstrument(Instrument* instrument);
     void RemoveInstrument(unsigned int index);
     void EditInstrument(unsigned int index, vector<string> newValues);

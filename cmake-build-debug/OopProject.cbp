@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/d/Facultate/OOP/OopProject/Controller.h">
+			<Option target="OopProject"/>
+		</Unit>
 		<Unit filename="/mnt/d/Facultate/OOP/OopProject/Domain.cpp">
 			<Option target="OopProject"/>
 		</Unit>
@@ -92,6 +95,15 @@
 			<Option target="OopProject"/>
 		</Unit>
 		<Unit filename="/mnt/d/Facultate/OOP/OopProject/Repository.h">
+			<Option target="OopProject"/>
+		</Unit>
+		<Unit filename="/mnt/d/Facultate/OOP/OopProject/Tests.cpp">
+			<Option target="OopProject"/>
+		</Unit>
+		<Unit filename="/mnt/d/Facultate/OOP/OopProject/Tests.h">
+			<Option target="OopProject"/>
+		</Unit>
+		<Unit filename="/mnt/d/Facultate/OOP/OopProject/UI.h">
 			<Option target="OopProject"/>
 		</Unit>
 		<Unit filename="/mnt/d/Facultate/OOP/OopProject/main.cpp">

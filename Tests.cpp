@@ -44,6 +44,9 @@ void Tests::TestRepoAdd() {
     catch (...){
         assert(false);
     }
+    for(auto instrument : repository.getInstruments()){
+        delete instrument;
+    }
 }
 
 void Tests::TestRepoRemove() {
@@ -67,6 +70,9 @@ void Tests::TestRepoRemove() {
     }
     catch (...){
         assert(true);
+    }
+    for(auto instrument : repository.getInstruments()){
+        delete instrument;
     }
 }
 
@@ -96,6 +102,9 @@ void Tests::TestRepoEdit() {
     catch (...){
         assert(true);
     }
+    for(auto instrument : repository.getInstruments()){
+        delete instrument;
+    }
 }
 
 void Tests::TestRepoSaveLoad() {
@@ -117,6 +126,13 @@ void Tests::TestRepoSaveLoad() {
     assert(repository1.getInstruments().at(1)->getAllInfo() == v2->getAllInfo());
     assert(repository1.getInstruments().at(3)->getAllInfo() == g1->getAllInfo());
     assert(repository1.getInstruments().at(4)->getAllInfo() == g2->getAllInfo());
+
+    for(auto instrument : repository.getInstruments()){
+        delete instrument;
+    }
+    for(auto instrument : repository1.getInstruments()){
+        delete instrument;
+    }
 }
 
 void Tests::TestRepoUndoRedo() {
@@ -145,6 +161,9 @@ void Tests::TestRepoUndoRedo() {
     repository.Redo();
     assert(repository.getInstruments().size() == 3);
     assert(repository.getInstruments().at(2)->getId() == 3);
+    for(auto instrument : repository.getInstruments()){
+        delete instrument;
+    }
 }
 
 void Tests::TestRepoGet() {
@@ -161,7 +180,9 @@ void Tests::TestRepoGet() {
     assert(repository.getInstruments().at(1)->getId() == 2);
     assert(repository.getInstruments().at(2)->getId() == 3);
     assert(repository.getInstruments().at(3)->getId() == 4);
-
+    for(auto instrument : repository.getInstruments()){
+        delete instrument;
+    }
 }
 
 void Tests::TestOut() {
@@ -171,6 +192,9 @@ void Tests::TestOut() {
     repository.AddInstrument(g);
     repository.AddInstrument(v);
     std::cout<<repository;
+    for(auto instrument : repository.getInstruments()){
+        delete instrument;
+    }
 }
 
 void Tests::TestStringToInstrument() {

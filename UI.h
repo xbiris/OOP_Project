@@ -8,6 +8,8 @@ using std::cout;
 
 class UI {
 public:
+    UI();
+    ~UI();
     void StartGame();
     void DisplayMenu();
     bool ReadOption();
@@ -19,6 +21,19 @@ public:
 private:
     Controller controller;
 };
+
+
+UI::UI() {
+    StartGame();
+}
+
+
+UI::~UI() {
+    for(auto instrument : this->controller.getRepository().getInstruments()){
+        delete instrument;
+    }
+}
+
 
 void UI::StartGame() {
     controller = Controller();

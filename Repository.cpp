@@ -21,11 +21,13 @@ InstrumentRepository::InstrumentRepository() {
 /***
  * Destructor
  */
+ /*
 InstrumentRepository::~InstrumentRepository() {
     for(auto & instrument : instruments){
         delete instrument;
     }
 }
+  */
 
 /***
  * Overload for insertion operator

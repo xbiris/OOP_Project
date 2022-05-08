@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/d/Facultate/OOP/OopProject/Domain.cpp" "/mnt/d/Facultate/OOP/OopProject/cmake-build-debug/CMakeFiles/OopProject.dir/Domain.cpp.o"
   "/mnt/d/Facultate/OOP/OopProject/Repository.cpp" "/mnt/d/Facultate/OOP/OopProject/cmake-build-debug/CMakeFiles/OopProject.dir/Repository.cpp.o"
+  "/mnt/d/Facultate/OOP/OopProject/Tests.cpp" "/mnt/d/Facultate/OOP/OopProject/cmake-build-debug/CMakeFiles/OopProject.dir/Tests.cpp.o"
   "/mnt/d/Facultate/OOP/OopProject/main.cpp" "/mnt/d/Facultate/OOP/OopProject/cmake-build-debug/CMakeFiles/OopProject.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
