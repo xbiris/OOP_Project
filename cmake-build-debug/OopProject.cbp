@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/d/Facultate/OOP/OopProject/Controller.cpp">
+			<Option target="OopProject"/>
+		</Unit>
 		<Unit filename="/mnt/d/Facultate/OOP/OopProject/Controller.h">
 			<Option target="OopProject"/>
 		</Unit>

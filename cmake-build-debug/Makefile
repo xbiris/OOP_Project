@@ -123,6 +123,33 @@ OopProject/fast:
 	$(MAKE) -f CMakeFiles/OopProject.dir/build.make CMakeFiles/OopProject.dir/build
 .PHONY : OopProject/fast
 
+Controller.o: Controller.cpp.o
+
+.PHONY : Controller.o
+
+# target to build an object file
+Controller.cpp.o:
+	$(MAKE) -f CMakeFiles/OopProject.dir/build.make CMakeFiles/OopProject.dir/Controller.cpp.o
+.PHONY : Controller.cpp.o
+
+Controller.i: Controller.cpp.i
+
+.PHONY : Controller.i
+
+# target to preprocess a source file
+Controller.cpp.i:
+	$(MAKE) -f CMakeFiles/OopProject.dir/build.make CMakeFiles/OopProject.dir/Controller.cpp.i
+.PHONY : Controller.cpp.i
+
+Controller.s: Controller.cpp.s
+
+.PHONY : Controller.s
+
+# target to generate assembly for a file
+Controller.cpp.s:
+	$(MAKE) -f CMakeFiles/OopProject.dir/build.make CMakeFiles/OopProject.dir/Controller.cpp.s
+.PHONY : Controller.cpp.s
+
 Domain.o: Domain.cpp.o
 
 .PHONY : Domain.o
@@ -240,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... OopProject"
+	@echo "... Controller.o"
+	@echo "... Controller.i"
+	@echo "... Controller.s"
 	@echo "... Domain.o"
 	@echo "... Domain.i"
 	@echo "... Domain.s"

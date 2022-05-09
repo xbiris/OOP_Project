@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/mnt/d/Facultate/OOP/OopProject/Controller.cpp" "/mnt/d/Facultate/OOP/OopProject/cmake-build-debug/CMakeFiles/OopProject.dir/Controller.cpp.o"
   "/mnt/d/Facultate/OOP/OopProject/Domain.cpp" "/mnt/d/Facultate/OOP/OopProject/cmake-build-debug/CMakeFiles/OopProject.dir/Domain.cpp.o"
   "/mnt/d/Facultate/OOP/OopProject/Repository.cpp" "/mnt/d/Facultate/OOP/OopProject/cmake-build-debug/CMakeFiles/OopProject.dir/Repository.cpp.o"
   "/mnt/d/Facultate/OOP/OopProject/Tests.cpp" "/mnt/d/Facultate/OOP/OopProject/cmake-build-debug/CMakeFiles/OopProject.dir/Tests.cpp.o"

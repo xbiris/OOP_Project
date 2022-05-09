@@ -46,9 +46,17 @@ ostream &operator<<(ostream &o, const InstrumentRepository& instrumentRepository
  * Also adds "R" to the undo stack (remove symbol)
  * @param instrument - given instrument
  */
-void InstrumentRepository::AddInstrument(Instrument *instrument) {
-     this->instruments.push_back(instrument);
-     undoStack.push("R");
+void InstrumentRepository::AddInstrument(Instrument *instrument, unsigned int index) {
+    if(index < 0 || index > this->instruments.size())
+    {
+        //std::cout<<instrument->getAllInfo()<<index<<"\n\n";
+        delete instrument;
+        throw std::exception();
+    }
+    else if(index == this->instruments.size())
+        this->instruments.push_back(instrument);
+    else
+         this->instruments.insert(this->instruments.begin() + index, instrument);
 }
 
 /***
@@ -60,7 +68,6 @@ void InstrumentRepository::AddInstrument(Instrument *instrument) {
 void InstrumentRepository::RemoveInstrument(unsigned int index) {
     if(index < 0 || index >= this->instruments.size())
         throw std::exception();
-    undoStack.push(instruments[index]->getAllInfo());
     auto x = this->instruments[index];
     this->instruments.erase(this->instruments.begin() + index);
     delete x;
@@ -89,7 +96,7 @@ void InstrumentRepository::LoadData(const string& fileName) {
     while (csvFile >> line) {
         auto i = StringToInstrument(line);
         if(i != nullptr) {
-            AddInstrument(i);
+            AddInstrument(i, this->instruments.size());
         }
     }
 }
@@ -104,49 +111,6 @@ void InstrumentRepository::SaveData(const string& fileName) {
 
     for(auto instrument : instruments){
         csvFile<<instrument->getAllInfo();
-    }
-}
-
-/***
- * Undoes the previous file operation
- * If an element has been removed, adds it back
- * If an element has been added, removes it
- */
-void InstrumentRepository::Undo() {
-    if(undoStack.empty())
-        return;
-
-    if(undoStack.top() == "R" && !this->instruments.empty()){
-        redoStack.push(instruments.back()->getAllInfo());
-        auto x = this->instruments.at(this->instruments.size() - 1);
-        this->instruments.pop_back();
-        delete x;
-    }
-    else{
-        redoStack.push("R");
-        auto i = StringToInstrument(undoStack.top());
-        if(i != nullptr)
-            this->instruments.push_back(i);
-    }
-    undoStack.pop();
-}
-
-/***
- * Cancels the last Undo operation
- */
-void InstrumentRepository::Redo() {
-    if(redoStack.empty())
-        return;
-
-    if(redoStack.top() == "R" && !this->instruments.empty()){
-        auto x = this->instruments.at(this->instruments.size() - 1);
-        this->instruments.pop_back();
-        delete x;
-    }
-    else {
-        auto i = StringToInstrument(redoStack.top());
-        if(i != nullptr)
-            this->instruments.push_back(i);
     }
 }
 

@@ -1,6 +1,7 @@
 #ifndef OOPPROJECT_TESTS_H
 #define OOPPROJECT_TESTS_H
 #include "Repository.h"
+#include "Controller.h"
 #include "cassert"
 
 class Tests {
@@ -16,6 +17,12 @@ public:
     static void TestRepoGet();
     static void TestOut();
     static void TestStringToInstrument();
+    static void TestFilter();
+
+    static void TestGuitar();
+    static void TestViolin();
+    static void TestDrumKit();
+    static void TestFlute();
 };
 
 

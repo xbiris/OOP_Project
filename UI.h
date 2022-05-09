@@ -48,10 +48,11 @@ void UI::DisplayMenu() {
         message += "1. Add instrument\n";
         message += "2. Remove instrument\n";
         message += "3. Edit instrument\n";
-        message += "4. Undo\n";
-        message += "5. Redo\n";
-        message += "6. Print repository\n";
-        message += "7. Exit\n";
+        message += "4. Filter\n";
+        message += "5. Undo\n";
+        message += "6. Redo\n";
+        message += "7. Print repository\n";
+        message += "8. Exit\n";
 
         cout<<message;
 
@@ -70,12 +71,19 @@ bool UI::ReadOption() {
         return true;
     }
 
-    int index;
+    unsigned int index;
     switch (option) {
         case 1: {
             auto instrument = ReadInstrument();
+            cout<<"Index: ";
+            cin>>index;
             if (instrument != nullptr) {
-                controller.AddInstrument(instrument);
+                try{
+                    controller.AddInstrument(instrument, index);
+                }
+                catch (...){
+                    cout<<"Something went wrong";
+                }
             } else {
                 cout << "Invalid input!\n";
             }
@@ -109,16 +117,60 @@ bool UI::ReadOption() {
             delete instrument;
             break;
         }
-        case 4:
-            controller.Undo();
+        case 4: {
+            cout << "Choose an instrument\n";
+            cout << "G - Guitar\n";
+            cout << "V - Violin\n";
+            cout << "D - Drum Kit\n";
+            cout << "F - Flute\n";
+
+            string opt;
+            cin >> opt;
+
+            try{
+                if (opt == "G") {
+                    cout << controller.FilterByType(Guitar_);
+                } else if (opt == "V") {
+                    cout << controller.FilterByType(Violin_);
+                } else if (opt == "D") {
+                    cout << controller.FilterByType(DrumKit_);
+                } else if (opt == "F") {
+                    cout << controller.FilterByType(Flute_);
+                } else {
+                    cout << "Wrong input";
+                }
+            }
+            catch (...)
+            {
+                cout<<"Something went wrong";
+            }
             break;
+        }
         case 5:
-            controller.Redo();
+            try{
+                controller.Undo();
+            }
+            catch (...){
+                cout<<"Something went wrong";
+            }
             break;
         case 6:
-            cout<<controller.getRepository();
+            try{
+                controller.Redo();
+            }
+            catch (...){
+                cout<<"Something went wrong";
+            }
             break;
         case 7:
+            try{
+                cout<<controller.getRepository();
+            }
+            catch (...) {
+                cout<<"Something went wrong";
+            }
+            break;
+        case 8:
             return false;
         default:
             cout<<"Invalid option.\n";

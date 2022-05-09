@@ -28,6 +28,7 @@ public:
     inline float getPrice() const { return this->price; }
     inline bool getAcoustic() const { return this->acoustic; }
 
+    virtual InstrumentsEnum getType() = 0;
     virtual void editAllInfo(vector<string> newInfo) = 0;
     virtual string getAllInfo() = 0;
 private:
@@ -44,6 +45,7 @@ public:
     inline int getNrStrings() const { return this->nrStrings; }
     inline bool getSteelStrings() const { return this->steelStrings; }
 
+    inline InstrumentsEnum getType() override { return Guitar_; };
     void editAllInfo(vector<string> newInfo) override;
     string getAllInfo() override;
 private:
@@ -59,6 +61,7 @@ public:
     inline int getNrStrings() const { return this->nrStrings; }
     inline int getSize() const { return this->size; }
 
+    inline InstrumentsEnum getType() override { return Violin_; };
     void editAllInfo(vector<string> newInfo) override;
     string getAllInfo() override;
 
@@ -75,6 +78,7 @@ public:
     inline int getNrPieces() const { return this->nrPiecesKit; }
     inline bool getDoubleBass() const { return this->doubleBass; }
 
+    inline InstrumentsEnum getType() override { return DrumKit_; };
     void editAllInfo(vector<string> newInfo) override;
     string getAllInfo() override;
 
@@ -90,6 +94,7 @@ public:
 
     inline string getMaterial() const{ return this->material; }
 
+    inline InstrumentsEnum getType() override { return Flute_; };
     void editAllInfo(vector<string> newInfo) override;
     string getAllInfo() override;
 private:
